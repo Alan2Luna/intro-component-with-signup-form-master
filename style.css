@@ -40,7 +40,7 @@ body {
 .text-title {
     color: white;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 35px;
     margin: 1rem 0;
 }
@@ -93,15 +93,18 @@ body {
     outline: var(--dark-blue);
 }
 
-.form__container input::hover {
+.form__container input:hover {
     border: 1px solid var(--dark-blue);
-    background-color: var(--dark-blue);
 }
 
 .form__container input::placeholder {
     font-family: var(--font-family);
     color: var(--dark-blue);
     font-weight: 600;
+}
+
+.form__container input[data-warning='on']::placeholder {
+    color: white;
 }
 
 .form__btn {
@@ -114,6 +117,11 @@ body {
     font-weight: 700;
     margin: .5rem 0;
     cursor: pointer;
+    outline: none;
+}
+
+.form__btn:hover {
+    background-color: #60dea7;
 }
 
 .text__terms {
@@ -128,6 +136,21 @@ body {
     font-style: normal;
 }
 
+.warning {
+    font-style: italic;
+    color: var(--red);
+    text-align: right;
+    margin-bottom: .5rem;
+    font-size: 0.8rem;
+}
+
+input[data-warning="on"] {
+    border: 1px solid var(--red);
+    background-image: url('./images/icon-error.svg');
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+}
+
 @media screen and (min-width: 950px) {
     body {
         background-image: url('./images/bg-intro-desktop.png');
@@ -137,7 +160,7 @@ body {
         display: flex;
         align-items: center;
         height: 100vh;
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
     }
 
@@ -152,9 +175,9 @@ body {
     }
 
     .form {
-        margin-bottom: 0rem;
         max-width: 550px;
-        margin-right: 0;
+        padding-top: 0;
+        margin: 0 0 0 1.5rem;
     }
 
     .form__text {
@@ -162,7 +185,7 @@ body {
     }
 
     .form__container input {
-        padding: 1.4rem;
+        padding: 1.2rem;
         font-size: 1.2rem;
     }
 
