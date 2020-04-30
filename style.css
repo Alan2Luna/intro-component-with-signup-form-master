@@ -137,6 +137,7 @@ body {
 }
 
 .warning {
+    display: none;
     font-style: italic;
     color: var(--red);
     text-align: right;
@@ -144,7 +145,12 @@ body {
     font-size: 0.8rem;
 }
 
+input[data-warning="on"] + .warning {
+    display: block;
+}
+
 input[data-warning="on"] {
+    margin: 0 0 .3rem 0;
     border: 1px solid var(--red);
     background-image: url('./images/icon-error.svg');
     background-position: 95% 50%;
@@ -184,9 +190,14 @@ input[data-warning="on"] {
         padding: 1rem 3rem;
     }
 
+    .form__container {
+        padding: 2rem;
+    }
+
     .form__container input {
         padding: 1rem;
         font-size: 1.2rem;
+        /* margin-bottom: .3rem; */
     }
 
     .form__btn {
